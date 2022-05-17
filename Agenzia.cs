@@ -43,11 +43,11 @@ namespace csharp_agenzia
         private string nome;
         public string Nome { get => nome; set => nome = value; }
         private List<Immobile> listaImmobili { get; set; }
-        
+
 
 
         // COSTRUTTORE  
-        public Agenzia(string nome)
+        public Agenzia(string nome, List<Immobile> l)
         { 
             this.Nome = nome;   
             listaImmobili = new List<Immobile>();
@@ -55,9 +55,9 @@ namespace csharp_agenzia
         }
 
         //  METODO PER AGGIUNGERE UN IMMOBILE
-        public void AddImmobile(Immobile i)
+        public void AddImmobile(List<Immobile> list, Immobile i)
         { 
-            listaImmobili.Add(i);
+            list.Add(i);
         }
 
 
@@ -80,9 +80,10 @@ namespace csharp_agenzia
         }
 
 
-        // SECONDO METODO PER CERCARE UN IMMOBILE INSERENDO QUALSIASI PARAMETRI
+        // SECONDO METODO PER CERCARE UN IMMOBILE INSERENDO QUALSIASI PARAMETRO
         public List<Immobile> SearchImmobili(string key)
         {
+
             return this.listaImmobili.FindAll(i => i.Contains(key));
         }
     }

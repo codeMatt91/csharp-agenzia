@@ -23,7 +23,7 @@ namespace csharp_agenzia
 
         protected override string Write()
         {
-            return string.Format("{0}\n Giardino(mq): {1}}", base.Write(), this.MqGiardino);
+            return string.Format("{0}\n Giardino(mq): {1}}", base.Write(), MqGiardino);
         }
 
 
